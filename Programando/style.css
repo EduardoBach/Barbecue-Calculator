@@ -1,0 +1,60 @@
+body{
+    background-image: linear-gradient(to bottom right, rgb(41, 41, 41), rgb(63, 63, 63));
+    background-repeat: no-repeat;
+    height: 608px;
+}
+
+#desc{
+    color: rgb(63, 94, 90);
+    font-family:'Libre Baskerville', serif;
+    font-size: 60px;
+    margin-top: 5%;
+    margin-left: 80px;
+    position: absolute;
+    width: 620px;
+    height: 200px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.container{
+    font-family:'Libre Baskerville', serif;
+    max-width: 300px;
+    margin: auto;
+    background-color: rgb(169, 213, 252);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 9%;
+    margin-left: 55%;
+    position: relative;
+}
+
+input{
+    width: 100%;
+    display: block;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+button{
+    padding: 5px;
+}
+
+button:hover{
+    background-color:rgb(63, 94, 90) ;
+    color: white;
+}
+
+#mode{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: yellowgreen;
+    position: absolute;
+    margin-top: -50px;
+}
+
+#mode:hover{
+    background-color: blueviolet;
+}
