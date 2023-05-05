@@ -1,25 +1,36 @@
+let inputAdultos= document.getElementById("adultos");
+let inputCriancas= document.getElementById("criancas");
+let inputDuracao= document.getElementById("duracao");
 
-let inputAdultos= document.getElementById("adultos")
-let inputCriancas= document.getElementById("criancas")
-let inputDuracao= document.getElementById("duracao")
+let resultado = document.getElementById("resultado");
 
-let resultado = document.getElementById("resultado")
+let btn = document.getElementById("btnC");
+btn.addEventListener('click', calcular);
 
 function calcular(){
-    console.log("Calculando...")
+    console.log("Calculando...");
 
-    let adultos = inputAdultos.value
-    let criancas = inputCriancas.value
-    let duracao = inputDuracao.value
+    let adultos = parseInt(inputAdultos.value);
+    let criancas = parseInt(inputCriancas.value);
+    let duracao = parseInt(inputDuracao.value);
+
+    if (isNaN(adultos) || isNaN(criancas) || isNaN(duracao)) {
+        alert("Por favor, preencha todos os campos com valores numéricos!");
+        return;
+    }
+
+    if (adultos < 0 || criancas < 0 || duracao < 0) {
+        alert("Não é permitido inserir valores negativos!");
+        return;
+    }
 
     let TotalCarne = carnePP(duracao) * adultos + (carnePP(duracao) / 2 * criancas);
     let TotalCerveja = cervejaPP(duracao) * adultos + (cervejaPP(duracao) / 2 * criancas);
     let TotalBebidas = bebidasPP(duracao) * adultos + (bebidasPP(duracao) / 2 * criancas);
 
-    resultado.innerHTML= `<P>${TotalCarne/1000} kg of meat</p>`
-    resultado.innerHTML+= `<P>${Math.ceil(TotalCerveja/355)} Beer cans</p>`
-    resultado.innerHTML+= `<P>${Math.ceil(TotalBebidas/2000)} Beverage Pets</p>`
-
+    resultado.innerHTML= `<p>${TotalCarne/1000} kg of meat</p>`;
+    resultado.innerHTML+= `<p>${Math.ceil(TotalCerveja/355)} Beer cans</p>`;
+    resultado.innerHTML+= `<p>${Math.ceil(TotalBebidas/2000)} Beverage Pets</p>`;
 }
 
 function carnePP(duracao){
